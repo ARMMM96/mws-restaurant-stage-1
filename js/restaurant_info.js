@@ -87,7 +87,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
+  image.alt = `${restaurant.name} image`;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -147,16 +148,25 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  * Create review HTML and add it to the webpage.
  */
 createReviewHTML = (review) => {
+  const div = document.createElement('div');
+  div.className = "review-info";
   const li = document.createElement('li');
   const name = document.createElement('p');
+  name.className = "review-name";
   name.innerHTML = review.name;
-  li.appendChild(name);
+  // li.appendChild(name);
+  div.appendChild(name);
+
 
   const date = document.createElement('p');
+  date.className = "review-date";
   date.innerHTML = review.date;
-  li.appendChild(date);
+  div.appendChild(date);
+  // li.appendChild(date);
+  li.appendChild(div);
 
   const rating = document.createElement('p');
+  rating.className = "rating";
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
@@ -192,3 +202,16 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  var top = document.querySelector('.leaflet-top');
+  var bottom = document.querySelector('.leaflet-bottom');
+  top.classList.add(".Zindex");
+  bottom.classList.add(".Zindex");
+  alert("its working");
+  console.log('the fucntion istsdfasdfa');
+  var test = document.querySelector('.leaflet-bar a, .leaflet-bar a:hover');
+  test.style.color = 'red';
+  
+
+ });
