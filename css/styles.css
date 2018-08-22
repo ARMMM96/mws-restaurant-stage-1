@@ -300,9 +300,6 @@ nav h1 a {
     width: 100%;
     margin-bottom: 90px;
   }
-  .Zindex{
-    z-index: auto;
-  }
   #restaurant-container, #reviews-container {
     padding: 0 40px;
     width: auto;

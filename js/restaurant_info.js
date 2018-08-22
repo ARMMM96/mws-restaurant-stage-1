@@ -198,20 +198,7 @@ getParameterByName = (name, url) => {
     results = regex.exec(url);
   if (!results)
     return null;
-  if (!results[2])
+  if (!results[2]) 
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  var top = document.querySelector('.leaflet-top');
-  var bottom = document.querySelector('.leaflet-bottom');
-  top.classList.add(".Zindex");
-  bottom.classList.add(".Zindex");
-  alert("its working");
-  console.log('the fucntion istsdfasdfa');
-  var test = document.querySelector('.leaflet-bar a, .leaflet-bar a:hover');
-  test.style.color = 'red';
-  
-
- });
